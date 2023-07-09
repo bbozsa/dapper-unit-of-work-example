@@ -15,7 +15,7 @@ namespace DapperUofW.Example.Console
         }
 
 
-        public async Task Run(string[] args)
+        public async Task Run()
         {
             using (var dbContext = await _dbContextFactory.CreateAsync())
             {

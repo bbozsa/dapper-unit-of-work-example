@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DapperUofW.Example.Database.Migration": {
+      "commandName": "Project",
+      "commandLineArgs": "\"Data Source=(localdb)\\\\MSSQLLocalDB;Initial Catalog=inventory-tracker;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False\""
+    }
+  }
+}

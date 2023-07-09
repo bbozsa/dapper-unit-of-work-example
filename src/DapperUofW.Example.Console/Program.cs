@@ -13,7 +13,7 @@ namespace DapperUofW.Example.Console
 
             var serviceProvider = services.BuildServiceProvider();
 
-            await serviceProvider.GetService<App>()?.Run(args)!;
+            await serviceProvider.GetService<App>()?.Run()!;
         }
 
         private static void ConfigureServices(IServiceCollection services)
@@ -34,10 +34,7 @@ namespace DapperUofW.Example.Console
 
             // Register Services
             //
-            //services.AddSingleton<IPassiveRfidReaderFactory, PassiveRfidReaderFactory>();
-            //services.AddSingleton<INurevaApiService, NurevaApiService>();
-            //services.AddSingleton<IGoogleAssistantService, GoogleAssistantService>();
-            //services.AddSingleton<IProcessingPipeline, ProcessingPipeline>();
+
 
             // add app
             services.AddTransient<App>();
