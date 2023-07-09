@@ -9,7 +9,7 @@ namespace DapperUofW.Example.Persistence
 
         public DbContextFactory(IConfiguration configuration)
         {
-            _connectionString = configuration.GetConnectionString("InventoryTrackerConnectionString");
+            _connectionString = configuration.GetConnectionString("DapperUofWExampleConnectionString");
             if (string.IsNullOrEmpty(_connectionString))
             {
                 throw new ArgumentNullException(nameof(_connectionString), "Database connection string is null or empty.");

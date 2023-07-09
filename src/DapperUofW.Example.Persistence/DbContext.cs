@@ -1,5 +1,6 @@
 ﻿using DapperUofW.Example.Core.Gateways.Persistence;
 using DapperUofW.Example.Core.Gateways.Persistence.Repository;
+using DapperUofW.Example.Persistence.Repositories;
 using Microsoft.Data.SqlClient;
 using System.Data;
 
@@ -7,8 +8,8 @@ namespace DapperUofW.Example.Persistence
 {
     public sealed class DbContext : IDbContext
     {
-        private readonly ICustomerRepository _customerRepository;
-        private readonly IOrderRepository _orderRepository;
+        private ICustomerRepository _customerRepository;
+        private IOrderRepository _orderRepository;
 
         private readonly IDbConnection _connection;
 
@@ -30,8 +31,8 @@ namespace DapperUofW.Example.Persistence
             return dbContext.OpenConnectionAsync();
         }
 
-        //      ICustomerRepository CustomerRepository => _customerRepository ??= new CustomerRepository(UnitOfWork);
-        //      IOrderRepository OrderRepository => _orderRepository ??= new OrderRepository(UnitOfWork);
+        public ICustomerRepository CustomerRepository => _customerRepository ??= new CustomerRepository(UnitOfWork);
+        public IOrderRepository OrderRepository => _orderRepository ??= new OrderRepository(UnitOfWork);
 
 
         public IUnitOfWork UnitOfWork { get; }

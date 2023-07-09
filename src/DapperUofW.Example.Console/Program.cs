@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace DapperUofW.Example.Console
@@ -17,21 +18,19 @@ namespace DapperUofW.Example.Console
 
         private static void ConfigureServices(IServiceCollection services)
         {
-            // configure logging
             services.AddLogging(builder =>
             {
                 builder.AddConsole();
                 builder.AddDebug();
             });
 
-            // build config
-            //var configuration = new ConfigurationBuilder()
-            //    .SetBasePath(Directory.GetCurrentDirectory())
-            //    .AddJsonFile("appsettings.json", optional: false)
-            //    .AddEnvironmentVariables()
-            //    .Build();
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false)
+                .AddEnvironmentVariables()
+                .Build();
 
-           // services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
+            // services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
 
             // Register Services
             //
