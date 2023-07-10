@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using DapperUofW.Example.Core.Gateways.Persistence;
+using DapperUofW.Example.Persistence;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -30,10 +32,12 @@ namespace DapperUofW.Example.Console
                 .AddEnvironmentVariables()
                 .Build();
 
+            services.AddTransient<IConfiguration>(sp => configuration);
+
             // services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
 
             // Register Services
-            //
+            services.AddSingleton<IDbContextFactory, DbContextFactory>();
 
 
             // add app
