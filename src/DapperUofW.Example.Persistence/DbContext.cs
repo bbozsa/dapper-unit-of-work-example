@@ -21,7 +21,15 @@ namespace DapperUofW.Example.Persistence
 
         private async Task<DbContext> OpenConnectionAsync()
         {
-            await ((SqlConnection)_connection).OpenAsync();
+            try
+            {
+                await ((SqlConnection)_connection).OpenAsync();
+            }
+            catch(Exception)
+            {
+                throw new Exception("Failed to open a database connection.");
+            }
+            
             return this;
         }
 
