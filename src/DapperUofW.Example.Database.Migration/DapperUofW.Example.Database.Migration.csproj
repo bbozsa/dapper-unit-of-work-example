@@ -14,11 +14,11 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-	  <None Remove="Scripts\Migrations\0001 - Create Tables.sql" />
+	  <None Remove="Scripts\Migrations\0001_Initial.sql" />
 	</ItemGroup>
 	
 	<ItemGroup>
-	  <EmbeddedResource Include="Scripts\Migrations\0001 - Create Tables.sql" />
+	  <EmbeddedResource Include="Scripts\Migrations\0001_Initial.sql" />
 	</ItemGroup>
 
 	<ItemGroup>

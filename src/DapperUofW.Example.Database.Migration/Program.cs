@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace DapperUofW.Example.Database.Migration
 {
-    public class Program
+    public static class Program
     {
         public static int Main(string[] args)
         {
@@ -17,14 +17,14 @@ namespace DapperUofW.Example.Database.Migration
 
                 EnsureDatabase.For.SqlDatabase(connectionString);
 
-                var upgrader =
+                var upgradeEngine =
                     DeployChanges.To
                         .SqlDatabase(connectionString)
                         .WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly())
                         .LogToConsole()
                         .Build();
 
-                var result = upgrader.PerformUpgrade();
+                var result = upgradeEngine.PerformUpgrade();
                 if (!result.Successful)
                 {
                     WriteErrorMessage(result.Error.Message);
