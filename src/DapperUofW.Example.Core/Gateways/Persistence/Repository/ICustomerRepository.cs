@@ -1,9 +1,10 @@
-﻿namespace DapperUofW.Example.Core.Gateways.Persistence.Repository
+﻿using DapperUofW.Example.Core.Domain.Entities;
+
+namespace DapperUofW.Example.Core.Gateways.Persistence.Repository
 {
     public interface ICustomerRepository
     {
-        //Task<IList<User>> GetPaginatedUsersAsync(PaginationSettingsDto paginationSettings);
-        //Task<User> GetAsync(Guid id);
-        //Task<int> GetTotalUsersCountAsync();
+        Task AddAsync(Customer  customer);
+        Task<Customer> GetAsync(Guid customerId);
     }
 }

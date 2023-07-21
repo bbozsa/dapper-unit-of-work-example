@@ -33,14 +33,8 @@ namespace DapperUofW.Example.Console
                 .Build();
 
             services.AddTransient<IConfiguration>(sp => configuration);
-
-            // services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
-
-            // Register Services
             services.AddSingleton<IDbContextFactory, DbContextFactory>();
 
-
-            // add app
             services.AddTransient<App>();
         }
     }

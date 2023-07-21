@@ -11,6 +11,7 @@
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public string Email { get; private init; }
+        public byte[] ConcurrencyToken { get; private set; }
         public IList<Order> Orders { get; private init; }
 
         public static Customer Create(string firstName, string lastName, string email)
