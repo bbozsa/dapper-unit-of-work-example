@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperUofW.Example.Persiste
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperUofW.Example.Console", "src\DapperUofW.Example.Console\DapperUofW.Example.Console.csproj", "{9D938276-A2C8-498E-A52F-C0E1D6688F86}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{75FBA873-D2E2-4963-BB0D-6FB37481C0DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperUofW.Example.Core.Tests", "tests\unit\DapperUofW.Example.Core.Tests\DapperUofW.Example.Core.Tests.csproj", "{E07E98BF-8DFC-4DCA-A441-9F85D60534CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{9D938276-A2C8-498E-A52F-C0E1D6688F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D938276-A2C8-498E-A52F-C0E1D6688F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D938276-A2C8-498E-A52F-C0E1D6688F86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E07E98BF-8DFC-4DCA-A441-9F85D60534CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E07E98BF-8DFC-4DCA-A441-9F85D60534CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E07E98BF-8DFC-4DCA-A441-9F85D60534CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E07E98BF-8DFC-4DCA-A441-9F85D60534CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +67,7 @@ Global
 		{59A1C62D-FBC3-48F3-87B1-30995B631593} = {125844EC-6636-4ED9-9DA5-66B291752A25}
 		{B1ED45C3-C66B-4480-9E0E-148E95495959} = {21E6D779-DE22-46DD-9473-8B0043140530}
 		{9D938276-A2C8-498E-A52F-C0E1D6688F86} = {C9B64B12-719C-4CDD-8EB8-DFE77DFDE6FF}
+		{E07E98BF-8DFC-4DCA-A441-9F85D60534CA} = {75FBA873-D2E2-4963-BB0D-6FB37481C0DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF49F62D-967E-4EC9-AF24-8E9832BEB275}

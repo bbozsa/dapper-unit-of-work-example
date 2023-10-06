@@ -65,6 +65,8 @@
     <Build Include="Security\Schemas\DapperUofWExample.sql" />
     <Build Include="DapperUofWExample\Tables\Customer.sql" />
     <Build Include="DapperUofWExample\Tables\Order.sql" />
+    <Build Include="DapperUofWExample\Tables\Appointment.sql" />
+    <Build Include="DapperUofWExample\Tables\Schedule.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DapperUofW.Example.Database.refactorlog" />

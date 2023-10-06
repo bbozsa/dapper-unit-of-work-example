@@ -8,8 +8,10 @@ namespace DapperUofW.Example.Persistence
 {
     public sealed class DbContext : IDbContext
     {
-        private ICustomerRepository _customerRepository;
-        private IOrderRepository _orderRepository;
+        private IPatientRepository _patientRepository;
+        private IPhysicianRepository _physicianRepository;
+        private IAppointmentRepository _appointmentRepository;
+        private IScheduleRepository _scheduleRepository;
 
         private readonly IDbConnection _connection;
 
@@ -20,7 +22,7 @@ namespace DapperUofW.Example.Persistence
         }
 
         private async Task<DbContext> OpenConnectionAsync()
-        { 
+        {
             await ((SqlConnection)_connection).OpenAsync();
             return this;
         }
@@ -31,8 +33,10 @@ namespace DapperUofW.Example.Persistence
             return dbContext.OpenConnectionAsync();
         }
 
-        public ICustomerRepository CustomerRepository => _customerRepository ??= new CustomerRepository(UnitOfWork);
-        public IOrderRepository OrderRepository => _orderRepository ??= new OrderRepository(UnitOfWork);
+        public IPatientRepository PatientRepository => _patientRepository ??= new PatientRepository(UnitOfWork);
+        public IPhysicianRepository PhysicianRepository => _physicianRepository ??= new PhysicianRepository(UnitOfWork);
+        public IAppointmentRepository AppointmentRepository => _appointmentRepository ??= new AppointmentRepository(UnitOfWork);
+        public IScheduleRepository ScheduleRepository => _scheduleRepository ??= new ScheduleRepository(UnitOfWork);
 
 
         public IUnitOfWork UnitOfWork { get; }

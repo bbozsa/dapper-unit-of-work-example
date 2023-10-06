@@ -4,9 +4,9 @@ using DapperUofW.Example.Persistence.Extensions;
 
 namespace DapperUofW.Example.Persistence.Repositories
 {
-    internal class OrderRepository : Repository, IOrderRepository
+    internal class PhysicianRepository : Repository, IPhysicianRepository
     {
-        public OrderRepository(IUnitOfWork unitOfWork)
+        public PhysicianRepository(IUnitOfWork unitOfWork)
         {
             ConnectionDetails = unitOfWork.GetConnectionDetails();
         }

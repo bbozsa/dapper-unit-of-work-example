@@ -6,18 +6,18 @@ using DapperUofW.Example.Persistence.Extensions;
 
 namespace DapperUofW.Example.Persistence.Repositories
 {
-    internal class CustomerRepository : Repository, ICustomerRepository
+    internal class PatientRepository : Repository, IPatientRepository
     {
 
-        public CustomerRepository(IUnitOfWork unitOfWork)
+        public PatientRepository(IUnitOfWork unitOfWork)
         {
             ConnectionDetails = unitOfWork.GetConnectionDetails();
         }
 
-        public async Task AddAsync(Customer customer)
+        public async Task AddAsync(Patient patient)
         {
             const string query =
-                @"INSERT INTO [DapperUofWExample].[Customer] (
+                @"INSERT INTO [DapperUofWExample].[Patient] (
                     [Id],
                     [FirstName],
                     [LastName],
@@ -28,7 +28,7 @@ namespace DapperUofW.Example.Persistence.Repositories
                     @LastName,
                     @Email);";
 
-            var affectedRows = await ConnectionDetails.Connection.ExecuteAsync(query, customer,
+            var affectedRows = await ConnectionDetails.Connection.ExecuteAsync(query, patient,
                 transaction: ConnectionDetails.Transaction);
 
             if (affectedRows < 1)
@@ -37,7 +37,7 @@ namespace DapperUofW.Example.Persistence.Repositories
             }
         }
 
-        public async Task<Customer> GetAsync(Guid customerId)
+        public async Task<Patient> GetAsync(Guid customerId)
         {
             const string query =
                 @"SELECT
@@ -46,14 +46,19 @@ namespace DapperUofW.Example.Persistence.Repositories
                         [LastName],
                         [Email],
                         [ConcurrencyToken]    
-                FROM [DapperUofWExample].[Customer]
+                FROM [DapperUofWExample].[Patient]
                 WHERE [Id] = @Id;";
 
-            var result = await ConnectionDetails.Connection.QueryAsync<Customer>(
-                sql: query, 
-                param: new {Id = customerId},
+            var result = await ConnectionDetails.Connection.QueryAsync<Patient>(
+                sql: query,
+                param: new { Id = customerId },
                 transaction: ConnectionDetails.Transaction);
             return result.SingleOrDefault();
+        }
+
+        public Task DeleteAll()
+        {
+            throw new NotImplementedException();
         }
     }
 }
