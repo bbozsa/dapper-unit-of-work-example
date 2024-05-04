@@ -8,14 +8,14 @@ namespace DapperUofW.Example.Persistence
 {
     public sealed class DbContext : IDbContext
     {
-        private IPatientRepository _patientRepository;
-        private IPhysicianRepository _physicianRepository;
-        private IAppointmentRepository _appointmentRepository;
-        private IScheduleRepository _scheduleRepository;
+        private IPatientRepository? _patientRepository;
+        private IPhysicianRepository? _physicianRepository;
+        private IAppointmentRepository? _appointmentRepository;
+        private IScheduleRepository? _scheduleRepository;
 
         private readonly IDbConnection _connection;
 
-        private DbContext(string connectionString)
+        private DbContext(string? connectionString)
         {
             _connection = new SqlConnection(connectionString);
             UnitOfWork = new UnitOfWork(_connection);
@@ -27,7 +27,7 @@ namespace DapperUofW.Example.Persistence
             return this;
         }
 
-        public static Task<DbContext> CreateAsync(string connectionString)
+        public static Task<DbContext> CreateAsync(string? connectionString)
         {
             var dbContext = new DbContext(connectionString);
             return dbContext.OpenConnectionAsync();

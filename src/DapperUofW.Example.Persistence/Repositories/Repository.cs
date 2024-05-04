@@ -2,6 +2,6 @@
 {
     public abstract class Repository
     {
-        internal IConnectionDetails ConnectionDetails { get; set; }
+        internal IConnectionDetails? ConnectionDetails { get; set; }
     }
 }

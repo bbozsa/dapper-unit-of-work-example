@@ -4,7 +4,7 @@ namespace DapperUofW.Example.Persistence.Extensions
 {
     internal static class ConnectionDetailsExtensions
     {
-        public static IConnectionDetails GetConnectionDetails(this IUnitOfWork unitOfWork)
+        public static IConnectionDetails? GetConnectionDetails(this IUnitOfWork unitOfWork)
         {
             return unitOfWork as IConnectionDetails;
         }

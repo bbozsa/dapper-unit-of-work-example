@@ -5,7 +5,7 @@ namespace DapperUofW.Example.Persistence
 {
     public class DbContextFactory : IDbContextFactory
     {
-        private readonly string _connectionString;
+        private readonly string? _connectionString;
 
         public DbContextFactory(IConfiguration configuration)
         {

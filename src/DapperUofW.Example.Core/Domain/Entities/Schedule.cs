@@ -13,7 +13,7 @@
 
         public DateTime CreatedDate { get; private set; }
         public DateTime LastModifiedDate { get; private set; }
-        public byte[] ConcurrencyToken { get; private set; }
+        public byte[]? ConcurrencyToken { get; private set; }
 
         public static Schedule Create(Guid physicianId)
         {

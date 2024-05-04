@@ -6,7 +6,7 @@ namespace DapperUofW.Example.Persistence
     public sealed class UnitOfWork : IUnitOfWork, IConnectionDetails
     {
         private readonly IDbConnection _connection;
-        private IDbTransaction _transaction;
+        private IDbTransaction? _transaction;
 
         public UnitOfWork(IDbConnection connection)
         {
